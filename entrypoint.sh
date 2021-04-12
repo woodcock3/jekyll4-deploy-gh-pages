@@ -10,11 +10,11 @@ BUNDLE_BUILD__SASSC=--disable-march-tune-native
 echo "Installing gems..."
 
 bundle config path vendor/bundle
-bundle install --jobs 4 --retry 3
+bundle install --path=vendor/bundle --jobs 4 --retry 3
 
 echo "Building Jekyll site..."
 
-JEKYLL_ENV=production bundle exec jekyll build --trace
+JEKYLL_ENV=production bundle exec jekyll build --trace --verbose
 
 echo "Publishing..."
 
